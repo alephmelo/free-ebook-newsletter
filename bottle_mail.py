@@ -5,7 +5,7 @@ import re
 import sqlite3
 from mailer import Mailer, Message
 
-
+'''
 url = "http://www.packtpub.com/packt/offers/free-learning"  # Url to be loaded.
 r = requests.get(url)  # Using requests to get content.
 data = r.text  # Take to plain text into data var.
@@ -15,6 +15,7 @@ desc = soup.find('div', class_='dotd-main-book-summary float-left'
                  ).contents[7].string
 title = re.sub('\s+', ' ', str(title))
 desc = re.sub('\s+', ' ', str(desc))
+
 
 # Start the emailing part
 me = 'alephmelo@icloud.com'
@@ -27,6 +28,7 @@ message.Subject = "%s." % title
 message.Html = """ %s """ % desc
 sender = Mailer(iCloudSMTP, use_tls=True, usr=me, pwd='')
 sender.send(message)
+'''
 
 
 @route('/')
